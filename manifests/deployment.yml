@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: edwardevlogievaztest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edwardevlogievaztest
+  template:
+    metadata:
+      labels:
+        app: edwardevlogievaztest 
+    spec:
+      containers:
+        - name: edwardevlogievaztest 
+          image: taapiacr.azurecr.io/edwardevlogievaztest
+          ports:
+          - containerPort: 80
